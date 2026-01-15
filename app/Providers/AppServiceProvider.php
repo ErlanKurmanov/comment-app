@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\News;
 use App\Models\VideoPost;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;
 
@@ -26,5 +27,7 @@ class AppServiceProvider extends ServiceProvider
             'news' => News::class,
             'video' => VideoPost::class,
         ]);
+
+        Model::shouldBeStrict();
     }
 }
